@@ -6,12 +6,12 @@ Primeira forma:
 
 - `$ mvn clear package` Obs: Esse comando já roda os testes uniários.
 - `$ cd /target`
-- `$ java -jar desafio-inter.jar`
+- `$ java -jar crud-java.jar`
 
 2. Caso tenha docker instalado 
 
-- `$ docker build -t desafio-inter/java .` Obs: existe um comando no Dockerfile que roda os testes uniários.
-- `$ docker run -p 8080:8080 desafio-inter/java` Obs: Verificar se a porta 8080 não está sendo utilizada para que não haja conflito. Caso esteja mapear a primeira opção após o -p para uma porta a sua escolha.
+- `$ docker build -t crud-java/java .` Obs: existe um comando no Dockerfile que roda os testes uniários.
+- `$ docker run -p 8080:8080 crud-java/java` Obs: Verificar se a porta 8080 não está sendo utilizada para que não haja conflito. Caso esteja mapear a primeira opção após o -p para uma porta a sua escolha.
 
 irá começar a rodar no link http://localhost8080
  
