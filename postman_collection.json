@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "fbe65fb4-0de4-436a-817f-bff1625c521e",
+		"name": "Desafio Inter Api Spring Boot ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2b355112-44bf-420e-aa01-bf0e7f03013f",
+								"exec": [
+									"pm.test(\"Test status 200\", function() {",
+									"    pm.response.to.have.status(200)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_localhost}}/user",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "429b4741-5bbe-4d2b-855b-3ecab0a92401",
+								"exec": [
+									"pm.test(\"Test status 200\", function() {",
+									"    pm.response.to.have.status(200)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_localhost}}/user/1",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ed62f95d-905a-444d-94b2-5fc17667dc6e",
+								"exec": [
+									"pm.test(\"Test status 201\", function() {",
+									"    pm.response.to.have.status(201)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"newUser\",\"email\": \"testnewuser@testmail.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_localhost}}/user",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eab51521-9a72-4b59-819c-fd06b6b72f31",
+								"exec": [
+									"pm.test(\"Test status 200\", function() {",
+									"    pm.response.to.have.status(200)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ryan\",\n    \"email\": \"updatedemail@testmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_localhost}}/user/1",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7f4de674-984e-48c5-b029-6f78f042bc93",
+								"exec": [
+									"pm.test(\"Delete and return status 200\", function() {",
+									"    pm.response.to.have.status(200)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_localhost}}/user/1",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPublicKey",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "133e8acb-4864-4201-8091-71ee84827c12",
+								"exec": [
+									"pm.test(\"Test status 200\", function() {",
+									"    pm.response.to.have.status(200)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_localhost}}/user/publicKey/1",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"user",
+								"publicKey",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SingleDigit",
+			"item": [
+				{
+					"name": "calculate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "256f4dd5-8e04-46d5-8f0b-8762cda7f6f1",
+								"exec": [
+									"pm.test(\"Test status 200\", function() {",
+									"    pm.response.to.have.status(200)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"k\": \"156\",\n    \"n\": \"12\",\n    \"user\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url_localhost}}/singleDigit",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"singleDigit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e31466d1-234d-4fc6-8c60-0de2abaac95c",
+								"exec": [
+									"pm.test(\"Test status 200\", function() {",
+									"    pm.response.to.have.status(200)",
+									"});",
+									"",
+									"pm.test(\"Response Is less then 2000ms\", function() {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_localhost}}/singleDigit/1",
+							"host": [
+								"{{base_url_localhost}}"
+							],
+							"path": [
+								"singleDigit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8d690086-7bc3-40c8-8a25-732a39cf53f5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "91af8d09-1706-4940-a334-8530d71e3939",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "079fd41f-7c33-4cfe-869e-a1602f17b578",
+			"key": "base_url_localhost",
+			"value": "localhost:8080"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
