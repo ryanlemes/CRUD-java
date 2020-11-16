@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "fbe65fb4-0de4-436a-817f-bff1625c521e",
-		"name": "Desafio Inter Api Spring Boot ",
+		"name": "Crud Java Api Spring Boot ",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

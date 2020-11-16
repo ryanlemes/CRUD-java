@@ -9,4 +9,4 @@ WORKDIR ./target
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "desafio-inter.jar"]
+ENTRYPOINT ["java", "-jar", "crud-java.jar"]
