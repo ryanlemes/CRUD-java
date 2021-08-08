@@ -10,7 +10,7 @@ Compiling and running
 2. Running with Docker: 
 
 - `$ docker build -t crud-java/java .`
-- `$ docker run -p 8080:8080 crud-java/java` Obs: Check if the port 8080 is aready in use, otherwise change the firts port after `-p` flag to another one.
+- `$ docker run -p 8080:8080 crud-java/java` Obs: Check if the port 8080 is aready in use, otherwise change the first port after `-p` flag to another one.
 
 Will run locally on http://localhost8080
  
