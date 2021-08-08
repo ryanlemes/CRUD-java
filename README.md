@@ -1,21 +1,20 @@
 # CRUD Java
-Compilando e executando
-Primeira forma:
+Compiling and running
 
-1. Caso tenha o maven instalado na máquina:
+1. Running with maven locally:
 
-- `$ mvn clear package` Obs: Esse comando já roda os testes uniários.
+- `$ mvn clear package` Obs: this command run the unit tests.
 - `$ cd /target`
 - `$ java -jar crud-java.jar`
 
-2. Caso tenha docker instalado 
+2. Running with Docker: 
 
-- `$ docker build -t crud-java/java .` Obs: existe um comando no Dockerfile que roda os testes uniários.
-- `$ docker run -p 8080:8080 crud-java/java` Obs: Verificar se a porta 8080 não está sendo utilizada para que não haja conflito. Caso esteja mapear a primeira opção após o -p para uma porta a sua escolha.
+- `$ docker build -t crud-java/java .`
+- `$ docker run -p 8080:8080 crud-java/java` Obs: Check if the port 8080 is aready in use, otherwise change the firts port after `-p` flag to another one.
 
-irá começar a rodar no link http://localhost8080
+Will run locally on http://localhost8080
  
 ---
 
-link da documentação Swagger:
+link for swagger documentation:
 - http://localhost:8080/swagger-ui.html#/
